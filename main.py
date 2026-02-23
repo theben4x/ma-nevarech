@@ -4,7 +4,7 @@ from fastapi.staticfiles import StaticFiles
 import json
 
 app = FastAPI()
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # טקסטים מלאים של ברכות (רישא וחתימה) עם ניקוד
 RISHONA_TEXTS = {
@@ -215,7 +215,7 @@ async def get_index():
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ברכות - האתר הרשמי</title>
-        <link rel="icon" href="/static/mylogo.png" type="image/png">
+        <link rel="icon" href="/mylogo.png" type="image/png">
         <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
         <style>
@@ -1198,7 +1198,7 @@ async def get_index():
                 <button id="nav-about" class="nav-item" onclick="showPage('about')">אודות</button>
             </div>
             <div class="logo" onclick="showPage('home')" style="position:absolute; left:50%; transform:translateX(-50%);">
-                <img src="/static/mylogo.png" style="height:100px; width:auto; vertical-align:middle;">
+                <img src="/mylogo.png" style="height:100px; width:auto; vertical-align:middle;">
             </div>
             <div style="display:flex; flex:1; justify-content:flex-end;">
                 <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">☀️</button>

@@ -4,16 +4,20 @@
     {
       "src": "main.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "mylogo.png",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
+      "src": "/mylogo.png",
+      "dest": "/mylogo.png"
     },
     {
       "src": "/(.*)",
-      "dest": "main.py"
+      "dest": "/main.py"
     }
   ]
 }
