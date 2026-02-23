@@ -1136,94 +1136,254 @@ async def get_index():
                 }}
             }}
 
+            /* === Mobile: special layout and typography === */
             @media (max-width: 768px) {{
+                .hero-tagline {{
+                    font-size: 0.95rem;
+                    margin-bottom: 6px;
+                }}
                 .hero-title {{
                     font-size: 2rem;
-                    line-height: 1.2;
+                    line-height: 1.25;
+                    margin: 0 0 10px 0;
+                }}
+                .hero-subtitle {{
+                    font-size: 1.05rem;
+                    margin: 0 0 24px 0;
+                    line-height: 1.5;
                 }}
                 .search-bar-pill {{
                     flex-direction: column;
                     border-radius: 24px;
                     overflow: hidden;
+                    gap: 0;
+                    box-shadow: 0 6px 24px rgba(0,0,0,0.1);
                 }}
                 .search-bar-pill input {{
                     width: 100%;
                     padding: 18px 20px;
-                    font-size: 1.15rem;
+                    font-size: 1.1rem;
                     min-width: 0;
+                    min-height: 48px;
                 }}
                 .search-bar-btn {{
                     width: 100%;
                     padding: 18px 24px;
-                    font-size: 1.2rem;
+                    font-size: 1.15rem;
+                    min-height: 52px;
                 }}
                 .main-content {{
-                    padding: 0 16px 48px;
+                    padding: 0 20px 40px;
                     width: 100%;
+                    margin-top: 32px;
                 }}
                 #about-content {{
-                    padding: 0 16px;
+                    padding: 0 20px 40px;
                     width: 100%;
                     box-sizing: border-box;
+                    margin-top: 32px;
                 }}
                 .daily-cards-wrap {{
-                    padding: 0 16px;
-                    margin: 24px auto 0;
+                    padding: 0 20px;
+                    margin: 28px auto 0;
+                    gap: 16px;
                 }}
                 .daily-card {{
                     max-width: 100%;
                     width: 100%;
-                    padding: 28px 20px;
+                    padding: 24px 20px;
+                    border-radius: 24px;
+                }}
+                .daily-card-title {{
+                    font-size: 1.5rem;
+                    margin-bottom: 12px;
+                }}
+                .daily-card-quote {{
+                    font-size: 1.35rem;
+                    line-height: 1.55;
+                }}
+                .daily-card-refresh {{
+                    padding: 14px 24px;
+                    font-size: 1.2rem;
+                    min-height: 48px;
                 }}
                 .navbar {{
-                    width: 95%;
+                    width: 94%;
                     padding: 10px 16px;
+                    margin-top: 16px;
+                }}
+                .navbar .logo img {{
+                    height: 48px !important;
+                    max-height: 48px;
+                }}
+                .nav-item {{
+                    padding: 10px 16px;
+                    font-size: 1.05rem;
+                    min-height: 44px;
                 }}
                 .navbar-divider {{
-                    width: 95%;
+                    width: 94%;
+                    margin: 6px auto 0;
                 }}
                 .suggestions {{
                     left: 0;
                     right: 0;
                     width: 100%;
                     box-sizing: border-box;
+                    border-radius: 20px;
+                    top: 100%;
+                    margin-top: 8px;
+                }}
+                .suggestion-item {{
+                    padding: 16px 20px;
+                    font-size: 1.1rem;
+                    min-height: 48px;
                 }}
                 .section-top {{
-                    padding: 0 8px;
+                    padding: 0 4px;
                 }}
                 .process-steps {{
-                    padding: 40px 16px 56px;
+                    padding: 32px 20px 48px;
+                }}
+                .process-steps-list {{
+                    gap: 40px;
                 }}
                 #result-card {{
-                    margin: 24px 16px 0;
+                    margin: 20px 16px 0;
                     width: calc(100% - 32px);
                     max-width: none;
+                    border-radius: 24px;
+                }}
+                .result-card-back {{
+                    padding: 14px 16px;
+                    min-height: 48px;
+                }}
+                .result-card-back-btn {{
+                    width: 40px;
+                    height: 40px;
+                    min-width: 40px;
+                    min-height: 40px;
+                }}
+                .bracha-card-header {{
+                    padding: 24px 20px 20px;
+                }}
+                .bracha-card-body {{
+                    padding: 20px 20px 24px;
+                }}
+                .bracha-section {{
+                    padding: 18px 20px;
+                    border-radius: 16px;
+                }}
+                .bracha-section-title {{
+                    font-size: 0.9rem;
+                }}
+                .bracha-section-name {{
+                    font-size: 1.15rem;
+                }}
+                .bracha-section-text {{
+                    font-size: 1.25rem;
+                    line-height: 1.55;
                 }}
                 .flex-container {{
-                    padding: 0 12px;
+                    padding: 0 16px;
                 }}
                 #tehillim-grid-container {{
-                    padding: 0 8px;
+                    padding: 0 4px;
                     max-width: 100%;
+                    gap: 8px;
+                }}
+                .tehillim-grid-num {{
+                    min-width: 36px;
+                    min-height: 36px;
+                    font-size: 0.85rem;
                 }}
                 #analytics-content {{
-                    padding: 0 16px 48px !important;
+                    padding: 0 20px 40px !important;
                     width: 100% !important;
                     max-width: 100% !important;
                     box-sizing: border-box;
+                    margin-top: 24px !important;
                 }}
                 #analytics-cards {{
                     grid-template-columns: 1fr;
-                    gap: 12px;
+                    gap: 14px;
+                }}
+                #analytics-cards > div {{
+                    padding: 20px 16px !important;
+                }}
+                .modal-content {{
+                    margin: 16px;
+                    max-height: calc(100vh - 32px);
+                    border-radius: 20px;
+                }}
+                .modal-overlay {{
+                    padding: 16px;
+                }}
+                footer {{
+                    padding: 20px 24px !important;
+                }}
+                footer span {{
+                    font-size: 0.85rem !important;
+                }}
+                #accessibility-btn {{
+                    width: 48px;
+                    height: 48px;
+                    bottom: 16px;
+                    left: 16px;
+                }}
+                #accessibility-panel {{
+                    bottom: 72px;
+                    left: 16px;
+                    width: calc(100vw - 32px);
+                    max-width: 280px;
                 }}
             }}
 
             @media (max-width: 480px) {{
                 .hero-title {{
-                    font-size: 1.65rem;
+                    font-size: 1.75rem;
                 }}
                 .hero-subtitle {{
+                    font-size: 0.95rem;
+                    margin: 0 0 20px 0;
+                }}
+                .navbar .logo img {{
+                    height: 42px !important;
+                }}
+                .nav-item {{
+                    padding: 8px 14px;
                     font-size: 1rem;
+                }}
+                .main-content {{
+                    padding: 0 16px 36px;
+                }}
+                #about-content {{
+                    padding: 0 16px 36px;
+                }}
+                .daily-cards-wrap {{
+                    padding: 0 16px;
+                    margin: 24px auto 0;
+                }}
+                .daily-card {{
+                    padding: 20px 16px;
+                }}
+                .daily-card-title {{
+                    font-size: 1.35rem;
+                }}
+                .daily-card-quote {{
+                    font-size: 1.2rem;
+                }}
+                #tehillim-grid-container {{
+                    grid-template-columns: repeat(5, 1fr);
+                    gap: 8px;
+                }}
+                .tehillim-grid-num {{
+                    min-width: 40px;
+                    min-height: 40px;
+                }}
+                .about-card {{
+                    padding: 24px 20px !important;
+                    border-radius: 24px;
                 }}
             }}
 
