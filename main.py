@@ -1138,6 +1138,9 @@ async def get_index():
 
             /* === Mobile: special layout and typography === */
             @media (max-width: 768px) {{
+                .logo {{
+                    display: none;
+                }}
                 .hero-tagline {{
                     font-size: 0.95rem;
                     margin-bottom: 6px;
