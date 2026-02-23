@@ -277,7 +277,11 @@ async def get_index():
                 color: #1a1a1a;
             }}
 
-            html {{ scroll-behavior: smooth; }}
+            html {{
+                scroll-behavior: smooth;
+                overflow-x: hidden;
+                max-width: 100%;
+            }}
             body {{
                 margin: 0; padding: 0; font-family: 'Heebo', sans-serif;
                 background: var(--bg-gradient); background-size: 400% 400%;
@@ -285,6 +289,8 @@ async def get_index():
                 display: flex; flex-direction: column; align-items: center;
                 color: var(--text-color); transition: 0.5s; overflow-x: hidden;
                 position: relative;
+                max-width: 100vw;
+                box-sizing: border-box;
             }}
 
             .bg-circles {{
@@ -596,13 +602,17 @@ async def get_index():
                 flex-direction: column;
                 align-items: center;
                 width: 100%;
+                max-width: 100%;
                 flex: 1;
+                box-sizing: border-box;
+                overflow-x: hidden;
             }}
 
             .main-content {{
                 margin-top: 48px; padding: 0 24px 60px; text-align: center; width: 90%; max-width: 720px;
                 display: flex; flex-direction: column; align-items: center;
                 overflow: visible; gap: 0;
+                box-sizing: border-box;
             }}
             #about-content {{ display: none; margin-top: 60px; text-align: center; width: 90%; max-width: 720px; }}
 
@@ -616,9 +626,9 @@ async def get_index():
             }}
             [data-theme="dark"] .hero-subtitle {{ color: var(--text-muted); }}
 
-            .search-container {{ position: relative; width: 100%; margin-top: 0; overflow: visible; z-index: 10; }}
+            .search-container {{ position: relative; width: 100%; max-width: 100%; margin-top: 0; overflow: visible; z-index: 10; box-sizing: border-box; }}
             .search-bar-pill {{
-                display: flex; align-items: stretch; width: 100%; border-radius: 50px;
+                display: flex; align-items: stretch; width: 100%; max-width: 100%; border-radius: 50px;
                 background: var(--card-bg); overflow: hidden; border: 1px solid rgba(0,0,0,0.06);
                 box-shadow: 0 4px 18px rgba(0,0,0,0.08); box-sizing: border-box;
             }}
@@ -668,9 +678,10 @@ async def get_index():
                 box-sizing: border-box;
                 position: relative !important;
                 flex-wrap: wrap;
+                padding: 0 16px;
             }}
             @media (max-width: 900px) {{
-                .daily-cards-wrap {{ flex-direction: column; align-items: center; }}
+                .daily-cards-wrap {{ flex-direction: column; align-items: center; padding: 0 16px; }}
             }}
             .daily-card {{
                 background: var(--card-bg);
@@ -1122,6 +1133,97 @@ async def get_index():
                 }}
                 .whatsapp-share-btn i {{
                     font-size: 1.5rem;
+                }}
+            }}
+
+            @media (max-width: 768px) {{
+                .hero-title {{
+                    font-size: 2rem;
+                    line-height: 1.2;
+                }}
+                .search-bar-pill {{
+                    flex-direction: column;
+                    border-radius: 24px;
+                    overflow: hidden;
+                }}
+                .search-bar-pill input {{
+                    width: 100%;
+                    padding: 18px 20px;
+                    font-size: 1.15rem;
+                    min-width: 0;
+                }}
+                .search-bar-btn {{
+                    width: 100%;
+                    padding: 18px 24px;
+                    font-size: 1.2rem;
+                }}
+                .main-content {{
+                    padding: 0 16px 48px;
+                    width: 100%;
+                }}
+                #about-content {{
+                    padding: 0 16px;
+                    width: 100%;
+                    box-sizing: border-box;
+                }}
+                .daily-cards-wrap {{
+                    padding: 0 16px;
+                    margin: 24px auto 0;
+                }}
+                .daily-card {{
+                    max-width: 100%;
+                    width: 100%;
+                    padding: 28px 20px;
+                }}
+                .navbar {{
+                    width: 95%;
+                    padding: 10px 16px;
+                }}
+                .navbar-divider {{
+                    width: 95%;
+                }}
+                .suggestions {{
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    box-sizing: border-box;
+                }}
+                .section-top {{
+                    padding: 0 8px;
+                }}
+                .process-steps {{
+                    padding: 40px 16px 56px;
+                }}
+                #result-card {{
+                    margin: 24px 16px 0;
+                    width: calc(100% - 32px);
+                    max-width: none;
+                }}
+                .flex-container {{
+                    padding: 0 12px;
+                }}
+                #tehillim-grid-container {{
+                    padding: 0 8px;
+                    max-width: 100%;
+                }}
+                #analytics-content {{
+                    padding: 0 16px 48px !important;
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    box-sizing: border-box;
+                }}
+                #analytics-cards {{
+                    grid-template-columns: 1fr;
+                    gap: 12px;
+                }}
+            }}
+
+            @media (max-width: 480px) {{
+                .hero-title {{
+                    font-size: 1.65rem;
+                }}
+                .hero-subtitle {{
+                    font-size: 1rem;
                 }}
             }}
 
