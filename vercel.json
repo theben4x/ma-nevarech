@@ -1,23 +1,13 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "main.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "mylogo.png",
-      "use": "@vercel/static"
-    }
+    {"src": "main.py", "use": "@vercel/python"},
+    {"src": "mylogo.png", "use": "@vercel/static"},
+    {"src": "favicon.png", "use": "@vercel/static"}
   ],
   "routes": [
-    {
-      "src": "/mylogo.png",
-      "dest": "/mylogo.png"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/main.py"
-    }
+    {"src": "/favicon.png", "dest": "/favicon.png"},
+    {"src": "/mylogo.png", "dest": "/mylogo.png"},
+    {"src": "/(.*)", "dest": "/main.py"}
   ]
 }
